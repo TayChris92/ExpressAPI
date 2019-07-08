@@ -10,6 +10,8 @@ DisplayName varchar(20) NOT NULL,
 Admin boolean NOT NULL
 );
 
-INSERT INTO users (
-TayChris1,Taylor,true
+INSERT INTO users VALUES(
+"TayChris1","Taylor",true
 );
+
+ALTER TABLE users ADD COLUMN Password varchar(20);

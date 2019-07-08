@@ -3,9 +3,9 @@ const UserModel = require('./models/User');
 var Sequelize = require('sequelize');
 
 //Initialize sequlize with database settings
-var sqcon = new Sequelize(process.env.DB_NAME,process.env.DB_USER,process.env.DB_PASS,{
-    host: process.env.DB_CONNECTION,
-    dialect: 'mysql'
+var sqcon = new Sequelize({
+    dialect: 'sqlite',
+    storage: process.env.DB_CONNECTION_SQLITE
 });
 
 //Authenticate that connection was established with confirmation message
