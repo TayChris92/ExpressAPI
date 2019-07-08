@@ -5,20 +5,16 @@ var bodyParser = require('body-parser');
 require('dotenv/config');
 
 const app = express();
-
+//Allow app to parse request body for json
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
 
-
+//Load routes
 app.use(userRoute);
 app.use(rootRoute);
 
+//Initialize server on port specified in .env
 app.listen(process.env.HOST_PORT);
-
-//Important Info!
-
-//MIDDLEWARES
-//Middleware allows us to run specific functions whenever a URL is accessed

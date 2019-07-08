@@ -32,7 +32,7 @@ router.post('/users', (req, res) => {
 
         dao.postUser(req, res);
 });
-//Deletes a user by DisplayID
+//Deletes a user by UserID
 router.delete('/users/:id', (req, res) => {
         const id = req.params.id;
         console.log(id);
