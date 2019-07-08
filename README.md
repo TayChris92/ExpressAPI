@@ -5,14 +5,14 @@ This serves as a simple web service which exposes arbitrary user data for use fo
 
 
 Uses the following dependencies:
-body-parser: ^1.19.0
-"dotenv": "^8.0.0",
-"express": "^4.17.1",
-"mysql": "^2.17.1",
-"mysql2": "^1.6.5",
-"nodemon": "^1.19.1",
-"sequelize": "^5.9.4",
-"sqlite3": "^4.0.9"
+- "body-parser": "^1.19.0"
+- "dotenv": "^8.0.0",
+- "express": "^4.17.1",
+- "mysql": "^2.17.1",
+- "mysql2": "^1.6.5",
+- "nodemon": "^1.19.1",
+- "sequelize": "^5.9.4",
+- "sqlite3": "^4.0.9"
 
 
 Currently using sqlite as an embedded DB, might remove the mysql dependencies later when I decide which one I want to stick with.
