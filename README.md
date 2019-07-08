@@ -5,7 +5,7 @@ This serves as a simple web service which exposes arbitrary user data for use fo
 
 
 Uses the following dependencies:
-"body-parser": "^1.19.0",
+body-parser: ^1.19.0
 "dotenv": "^8.0.0",
 "express": "^4.17.1",
 "mysql": "^2.17.1",
