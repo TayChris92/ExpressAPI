@@ -5,12 +5,12 @@ var bodyParser = require('body-parser');
 require('dotenv/config');
 
 const app = express();
+
 //Allow app to parse request body for json
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-
 
 //Load routes
 app.use(userRoute);

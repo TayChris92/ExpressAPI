@@ -13,11 +13,9 @@ router.use(function (req, res, next) {
 
 //Gets list of all users
 router.get('/users', function (req, res) {
-
         dao.getAllUsers().then((users) => {
                 res.send(users);
         });
-
 });
 //Gets a single user
 router.get('/users/:id', (req, res) => {
@@ -25,21 +23,17 @@ router.get('/users/:id', (req, res) => {
         dao.getSingleUser(id).then(user => {
                 res.send(user);
         });
-
 })
 //Posts a new user, must provide JSON
 router.post('/users', (req, res) => {
-
         dao.postUser(req, res);
 });
 //Deletes a user by UserID
 router.delete('/users/:id', (req, res) => {
         const id = req.params.id;
         console.log(id);
-
         dao.deleteUser(id);
         console.log("User deleted!");
-
 });
 //Updates a user, must provide JSON of new values and the ID of user to update
 router.patch('/users/:id', (req, res) => {

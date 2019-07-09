@@ -14,12 +14,13 @@ sqcon.authenticate().then(() =>{
 })
 
 //Load the user model
-const User = UserModel(sqcon,Sequelize);
+const User = UserModel(sqcon, Sequelize);
 
 //Retrieves list of users
 var getAllUsers = function(){
     return User.findAll({raw: true})
 } 
+
 //Get single user
 var getSingleUser = function(id) {
     return User.findAll({
@@ -29,6 +30,7 @@ var getSingleUser = function(id) {
         }
     })
 }
+
 //Post user
 var postUser = function(req,res){
     var user = {
@@ -41,8 +43,8 @@ var postUser = function(req,res){
             console.log("User created!");
             console.log(res.dataValues);
     });
-    
 }
+
 //Delete user
 var deleteUser = function(id){
     User.destroy({
@@ -51,6 +53,7 @@ var deleteUser = function(id){
         }
     })
 }
+
 //Update user
 var updateUser = function(user,id) 
 {
@@ -62,7 +65,6 @@ var updateUser = function(user,id)
          plain: true
     });
 }
-
 
 module.exports.getAllUsers = getAllUsers;
 module.exports.getSingleUser = getSingleUser;
