@@ -1,7 +1,7 @@
 {
-  "name": "restapi",
+  "name": "ADHD Assistant-User API",
   "version": "1.0.0",
-  "description": "Simple API for use with Angular Frontend",
+  "description": "Exposes user data for use with ADHDAS frontend.",
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js"
