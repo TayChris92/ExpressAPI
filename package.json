@@ -1,5 +1,5 @@
 {
-  "name": "ADHD Assistant-User API",
+  "name": "ADHD_Assistant-User_API",
   "version": "1.0.0",
   "description": "Exposes user data for use with ADHDAS frontend.",
   "main": "index.js",
