@@ -22,6 +22,7 @@ router.get('/users/:id', (req, res) => {
         const id = req.params.id;
         dao.getSingleUser(id).then(user => {
                 res.send(user);
+                console.log(user);
         });
 })
 //Posts a new user, must provide JSON

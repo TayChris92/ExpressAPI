@@ -25,9 +25,12 @@ var getAllUsers = function(){
 var getSingleUser = function(id) {
     return User.findAll({
         raw: true,
-        where : {
-            userID: id
-        }
+        where : Sequelize.where(
+                Sequelize.fn("lower", Sequelize.col("userID")),
+                Sequelize.fn("lower", id)
+                )
+        
+        
     })
 }
 
