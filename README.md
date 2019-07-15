@@ -24,7 +24,5 @@ I also wanted to pick up an ORM for the hell of it and so far sequelize has gott
 would want to stick with using SQL but I did find that switching from mysql to an sqlite database took almost no time at all using
 sequelize. For my next project I will focus on developing without an ORM just to sharpen my SQL skills.
 
-My experience with node has been positive so far. When comparing it to Java, I can see how some people would consider Java to include a lot of 
-boilerplate code. The entire Node project itself actually has very little code(including my data model and route configs) and I can
-definitely see myself continuing to use node for future projects.
+My experience with node has been positive so far. When comparing it to Java, I can see how some people would consider Java tooThe entire Node project itself actually has very little code(including my data model and route configs). I can definitely see myself continuing to use node for future projects as I seem to click with the syntax better than Java. The package manager is definitely very helpful as well.
 
