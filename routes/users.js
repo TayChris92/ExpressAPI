@@ -1,5 +1,5 @@
 require('dotenv/config');
-var dao = require('../userDAO');
+var dao = require('../dao/userDAO');
 var express = require('express');
 
 //Instantiate router

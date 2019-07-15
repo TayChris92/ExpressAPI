@@ -6,21 +6,21 @@
 //DataTypes : This is the Sequelize library which we just use for data type definitions
 module.exports = function (sequelize, DataTypes) {
     return sequelize.define('user', {
-        UserID: {
+        userID: {
             type: DataTypes.STRING,
             allowNull: false,
             primaryKey: true,
             unique: true
         },
-        DisplayName: {
+        displayName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        Admin: {
+        admin: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
         },
-        Password: {
+        password: {
             type: DataTypes.STRING,
             allowNull: false
         }

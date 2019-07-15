@@ -1,5 +1,5 @@
 require('dotenv/config');
-const UserModel = require('./models/User');
+const UserModel = require('../models/User');
 var Sequelize = require('sequelize');
 
 //Initialize sequlize with database settings
@@ -26,7 +26,7 @@ var getSingleUser = function(id) {
     return User.findAll({
         raw: true,
         where : {
-            UserID: id
+            userID: id
         }
     })
 }
@@ -34,10 +34,10 @@ var getSingleUser = function(id) {
 //Post user
 var postUser = function(req,res){
     var user = {
-        UserID: req.body.UserID,
-        DisplayName: req.body.DisplayName,
-        Admin: req.body.Admin,
-        Password: req.body.Password
+        userID: req.body.userID,
+        displayName: req.body.displayName,
+        admin: req.body.admin,
+        password: req.body.password
     }
     User.create(user).then((res)=>{
             console.log("User created!");
@@ -49,7 +49,7 @@ var postUser = function(req,res){
 var deleteUser = function(id){
     User.destroy({
         where: {
-            UserID: id
+            userID: id
         }
     })
 }
@@ -59,7 +59,7 @@ var updateUser = function(user,id)
 {
     User.update(user,{
         where: {
-            UserID: id
+            userID: id
         },
         returning: true,
          plain: true
