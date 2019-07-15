@@ -7,7 +7,7 @@ const router = express.Router();
 //Allow cross origin communication between front end and api
 router.use(function (req, res, next) {
         res.header("Access-Control-Allow-Origin", "*");
-        //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         next();
 });
 
