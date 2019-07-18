@@ -5,9 +5,6 @@ const rootRoutes = require('./routes/root');
 var bodyParser = require('body-parser');
 var cors = require('cors')
 
-//Config switches
-const local = false;
-
 //App init
 const app = express();
 app.use(cors())
@@ -25,7 +22,7 @@ app.use(rootRoutes);
 //Used with localhost switch because I hate editing .env or switching out variables
 //whenever I want to switch to and from localhost
 var connection;
-if(local){
+if(process.env.LOCAL){
     connection = "localhost";
 }else{
     connection = process.env.HOST_CONNECTION;

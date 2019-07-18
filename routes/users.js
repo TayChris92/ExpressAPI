@@ -12,35 +12,51 @@ router.use(function (req, res, next) {
 });
 
 //Gets list of all users
-router.get('/users', function (req, res) {
-        dao.getAllUsers().then((users) => {
+router.get('/users', async (req, res) => {
+        var users = await dao.getAllUsers();
+        if (users) {
+                console.log(users);
                 res.send(users);
-        });
+        } else {
+                console.log("No users were found!");
+                res.status(404).send("No users were found!");
+        }
 });
+
 //Gets a single user
-router.get('/users/:id', (req, res) => {
+router.get('/users/:id', async (req, res) => {
         const id = req.params.id;
-        dao.getSingleUser(id).then(user => {
-                res.send(user);
+        var user = await dao.getSingleUser(id);
+        if (user) {
                 console.log(user);
-        });
+                res.send(user);
+        }else{
+                console.log("No user with userID " + id + " was found.");
+                res.status(404).send("No user with userID " + id + " was found!");
+        }
 })
+
 //Posts a new user, must provide JSON
 router.post('/users', (req, res) => {
-        dao.postUser(req, res);
+        var user = req.body;
+        dao.postUser(user);
+        console.log("User created: " + user.userID);
 });
+
 //Deletes a user by UserID
 router.delete('/users/:id', (req, res) => {
         const id = req.params.id;
-        console.log(id);
         dao.deleteUser(id);
-        console.log("User deleted!");
+        console.log("User " + id + " deleted!");
 });
+
 //Updates a user, must provide JSON of new values and the ID of user to update
 router.patch('/users/:id', (req, res) => {
         const id = req.params.id;
         var user = req.body;
         dao.updateUser(user, id);
+        console.log("User " + user.userID + " updated!");
+        console.log("Updated values: " + user);
 });
 
 module.exports = router;
