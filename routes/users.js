@@ -1,14 +1,18 @@
 require('dotenv/config');
-var dao = require('../dao/userDAO');
-var express = require('express');
-
-//Instantiate router
+const dao = require('../dao/userDAO');
+const express = require('express');
 const router = express.Router();
+
 //Allow cross origin communication between front end and api
-router.use(function (req, res, next) {
+router.use((req, res, next) => {
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         next();
+});
+
+//Redirect root to users
+router.get('/', (req, res) => {
+        res.redirect("/users");
 });
 
 //Gets list of all users
@@ -30,7 +34,7 @@ router.get('/users/:id', async (req, res) => {
         if (user) {
                 console.log(user);
                 res.send(user);
-        }else{
+        } else {
                 console.log("No user with userID " + id + " was found.");
                 res.status(404).send("No user with userID " + id + " was found!");
         }
@@ -40,7 +44,7 @@ router.get('/users/:id', async (req, res) => {
 router.post('/users', (req, res) => {
         var user = req.body;
         dao.postUser(user);
-        console.log("User created: " + user.userID);
+        console.log("User created: " + user);
 });
 
 //Deletes a user by UserID
@@ -55,8 +59,7 @@ router.patch('/users/:id', (req, res) => {
         const id = req.params.id;
         var user = req.body;
         dao.updateUser(user, id);
-        console.log("User " + user.userID + " updated!");
-        console.log("Updated values: " + user);
+        console.log("User : " + user.userID + "updated! Updated values: " + user);
 });
 
 module.exports = router;

@@ -4,7 +4,7 @@
 //Parameters: 
 //sequelize : This is the instantiated sequelize instance
 //DataTypes : This is the Sequelize library which we just use for data type definitions
-module.exports = function (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
     return sequelize.define('user', {
         userID: {
             type: DataTypes.STRING,

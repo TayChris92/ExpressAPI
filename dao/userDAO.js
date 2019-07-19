@@ -17,14 +17,14 @@ async function init() {
 }
 
 //Retrieves list of all users
-getAllUsers = function () {
+getAllUsers = () => {
     return User.findAll({
         raw: true
     });
 }
 
 //Retrieves a single user
-getSingleUser = function (id) {
+getSingleUser = (id) => {
     return User.findOne({
         raw: true,
         where: Sequelize.where(
@@ -35,12 +35,12 @@ getSingleUser = function (id) {
 }
 
 //Creates a user
-postUser = function (user) {
+postUser = (user) => {
     User.create(user);
 }
 
 //Deletes a user
-deleteUser = function (id) {
+deleteUser = (id) => {
     User.destroy({
         where: {
             userID: id
@@ -49,7 +49,7 @@ deleteUser = function (id) {
 }
 
 //Updates a user
-updateUser = function (user, id) {
+updateUser = (user, id) => {
     User.update(user, {
         where: {
             userID: id
