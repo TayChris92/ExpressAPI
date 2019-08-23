@@ -1,5 +1,5 @@
 # ExpressAPI
-Restful API Implementation written in NodeJS and Express
+Restful API Implementation written in NodeJS with Express
 
 This serves as a simple web service which exposes arbitrary user data for use for my Angular frontend which I'll upload later.
 
