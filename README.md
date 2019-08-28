@@ -26,3 +26,12 @@ sequelize. For my next project I will focus on developing without an ORM just to
 
 My experience with node has been positive so far. When comparing it to Java, I can see how some people would consider Java too verbose. The entire Node project itself actually has very little code(including my data model and route configs). I can definitely see myself continuing to use node for future projects as I seem to click with the syntax better than Java. The package manager is definitely very helpful as well.
 
+Installation:
+
+Clone the repo with the command:
+
+´´´git clone https://github.com/TayChris92/ExpressAPI.git´´´
+
+Then navigate to the root directy and run the service with the command:
+
+´´´npm start´´´
