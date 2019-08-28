@@ -41,6 +41,9 @@ Usage:
 The service provides basic CRUD operation on localhost:3000/users.
 
 GET /users returns a list of users.
+
 GET /user/userid returns a single user.
+
 DELETE /user/userid can also be deleted.
+
 POST /user/{} can add a user.
