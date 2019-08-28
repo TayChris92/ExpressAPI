@@ -35,3 +35,12 @@ Clone the repo with the command:
 Then navigate to the root directory and run the service with the command:
 
 ```npm start```
+
+Usage:
+
+The service provides basic CRUD operation on localhost:3000/users.
+
+GET /users returns a list of users.
+GET /user/userid returns a single user.
+DELETE /user/userid can also be deleted.
+POST /user/{} can add a user.
