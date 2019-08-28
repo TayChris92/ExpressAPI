@@ -32,6 +32,6 @@ Clone the repo with the command:
 
 ```git clone https://github.com/TayChris92/ExpressAPI.git```
 
-Then navigate to the root directy and run the service with the command:
+Then navigate to the root directory and run the service with the command:
 
 ```npm start```
